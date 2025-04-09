@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Pictures/Maintenance_Patch.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poseidon Dashboard</title>
+    <link rel="stylesheet" href="/Pages/Register/register.css">
+    <style>
+        body {
+            background-image: url('/Pictures/background.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div id="login-form">
+            <form action="">
+                <h1>Register account</h1>
+                <div class="input-box">
+                    <input type="text" placeholder='Username' required />
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder='Password' required />
+                </div>
+
+                <div class="input-box">
+                    <input name="firstName" id="firstName" type="text" autoComplete="given-name"
+                        placeholder='Firstname' />
+                </div>
+
+                <div class="input-box">
+                    <input name="lastName" id="lastName" type="text" autoComplete="family-name"
+                        placeholder='Lastname' />
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder='Employee number' required />
+                </div>
+
+                <div class="input-box">
+                    <input type="email" placeholder='Email' required />
+                </div>
+
+                <div class="input-box">
+                    <input type="tel" placeholder='Phonenumber' required />
+                </div>
+
+                <div class="input-box">
+                    <select name='department' required>
+                        <option value="">Select department</option>
+                        <option value="">133AW</option>
+                        <option value="">132AW</option>
+                        <option value="">131AW</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <select name='squadron' required>
+                        <option value="">Select squadron</option>
+                        <option value="">Maintenance Squadron</option>
+                        <option value="">333 Squadron</option>
+                    </select>
+                </div>
+
+                <button type='submit' name='register'>Register</button>
+
+                <div class="register-link">
+                    <p><a href='/'>Already have an account?</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
