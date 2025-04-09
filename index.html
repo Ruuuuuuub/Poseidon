@@ -15,36 +15,28 @@
 </head>
 
 <body>
-    <div class='container'>
-        <div id="login-form">
-            <form action="">
-                <h1>Login</h1>
-                <div class="input-box">
-                    <input type="text" name="username" placeholder='Username' required />
-                    <img src="/Pages/Login/Icons/user.png" alt="User" class="icon">
+    <nav class="navbar">
+        <div>
+            <img src="/Pictures/Maintenance_Patch.png" alt="Logo" class="logo">
+            <div class="navbar-login-register">
+                <div class="navbar-login">
+                    <form action="/Pages/Login/login.html">
+                        <input type="submit" value="Login" />
+                    </form>
                 </div>
-                <div class="input-box">
-                    <input type="password" name="password" placeholder='Password' required />
-                    <img src="/Pages/Login/Icons/lock.png" alt="Password" class="icon">
+                <div class="navbar-register">
+                    <form action="/Pages/Register/register.html">
+                        <input type="submit" value="Register" />
+                    </form>
                 </div>
-
-                <div class="remember-forgot">
-                    <label><input type="checkbox" />Remember username</label>
-                    <a href="/Pages/Login/forgotPassword.html">Forgot password?</a>
-                </div>
-
-                <button type='submit' name='login'>Login</button>
-
-                <div class="register-link">
-                    <p>Don`t have an account?
-                        <a href='/Pages/Register/register.html'>
-                            Request access
-                        </a>
-                    </p>
-                </div>
-            </form>
+            </div>
         </div>
+    </nav>
+    <div class='container'>
+        <H1>Poseidon Dashboard</H1>
     </div>
+
+    <footer class="footer">Copy Right Of Ruben Isdahl</footer>
 </body>
 
 </html>
