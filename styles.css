@@ -38,17 +38,24 @@ code {
 
 .navbar {
     display: flex;
-    width: 98%;
+    width: 100%;
     position: absolute;
-    left: 15px;
-    top: 15px;
+    left: 0px;
+    top: 0px;
+}
+
+.logo {
+    display: flex;
+    width: 10vh;
+    position: absolute;
+
 }
 
 .navbar-login-register {
     display: flex;
     position: absolute;
-    right: 0px;
-    top: 5px;
+    right: 15px;
+    top: 15px;
     justify-content: space-between;
     gap: 10px;
     text-align: right;
