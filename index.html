@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Pictures/Maintenance_Patch.png" />
+    <link rel="icon" type="image/svg+xml" href="/pictures/Maintenance_Patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poseidon Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-image: url('/Pictures/background.png');
+            background-image: url('/pictures/background.png');
         }
     </style>
 </head>
@@ -17,12 +17,12 @@
 <body>
     <nav class="navbar">
         <div>
-            <img src="/Pictures/Maintenance_Patch.png" alt="Logo" class="logo">
+            <img src="/pictures/Maintenance_Patch.png" alt="maint_patch" class="logo">
             <div class="navbar-login-register">
-                <a href="/Pages/Login/login.html">
+                <a id="login">
                     <button>Login</button>
                 </a>
-                <a href="/Pages/Register/register.html">
+                <a id="register">
                     <button>Register</button>
                 </a>
             </div>
@@ -32,7 +32,19 @@
         <H1>Poseidon Dashboard</H1>
     </div>
 
-    <footer class="footer">Copy Right Of Ruben Isdahl</footer>
+    <a id="maint_home">
+        <button>133aw / Maint</button>
+    </a>
+
+    <footer id="footer" class="footer"></footer>
+
+    <script src="config.js"></script>
+    <script>
+        document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("login").href = LOGIN;
+        document.getElementById("register").href = REGISTER;
+        document.getElementById("maint_home").href = MAINTENANCE;
+    </script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ code {
 }
 
 .container {
-    width: 40vh;
+    width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(30px);
@@ -30,10 +30,6 @@ code {
     border-radius: 10px;
     padding: 30px 40px;
     text-align: center;
-}
-
-.container h1 {
-    font-size: 36px;
 }
 
 .logo {
@@ -105,4 +101,221 @@ code {
     font-size: 16px;
     color: #333;
     font-weight: 700;
+}
+
+.container button:hover {
+    cursor: pointer;
+    transform: scale(1.10);
+    background: #FFF;
+    color: #000;
+}
+
+.container .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.input-box option {
+    background: #333;
+    color: #fff;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.register-link {
+    display: flex;
+    justify-content: center;
+    font-size: 14.5px;
+    margin: 15px 0 -15px;
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.container h1 {
+    font-size: 36px;
+}
+
+.container .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot .register-link label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+
+.remember-forgot .register-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot .register-link a:hover {
+    text-decoration: underline;
+}
+
+.return {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.maint-flexbox {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.maint-home {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.maint-navbar {
+    background: #333;
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.maint-cards {
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    width: 99%;
+    position: absolute;
+    display: flex;
+    top: 6vh;
+}
+
+.maint-info {
+    background: #333;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.tiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    align-content: flex-start;
+}
+
+.tile {
+    flex: 1 0 250px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    width: 250px;
+    max-width: 250px;
+    height: 70px;
+    display: flex;
+}
+
+.tile h2 {
+    display: flex;
+    justify-content: left;
+    height: 70px;
+    position: relative;
+    top: -20px;
+    text-align: center;
+    align-items: center;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.flexTile image {
+    width: 10px;
+}
+
+.maintenanceTileHeaderText {
+    width: 25%;
+    height: 25%;
+}
+
+.tilePicture {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -10px;
+    right: -115px;
+}
+
+.tileLinks {
+    text-decoration: none;
+    color: black;
+
+}
+
+.tileLinks:hover {
+    color: black;
 }
