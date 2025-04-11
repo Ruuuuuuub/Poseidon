@@ -38,7 +38,7 @@ code {
 
 .navbar {
     display: flex;
-    width: 100%;
+    width: 99%;
     position: absolute;
     left: 15px;
     top: 15px;
@@ -47,11 +47,11 @@ code {
 .navbar-login-register {
     display: flex;
     position: absolute;
-    right: 30px;
+    right: 15px;
     top: 5px;
     justify-content: space-between;
     gap: 10px;
-    text-align: center;
+    text-align: right;
 }
 
 .navbar-login-register button {
