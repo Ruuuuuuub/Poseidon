@@ -23,7 +23,7 @@
             <div class="maint-cards">
                 <section class="tiles-container">
 
-                    <a class="tile tileLinks" id="MAINT">
+                    <a class="tile tileLinks" id="maint">
                         <div class="maintenanceTileHeaderText">
                             <h2>Maintenace</h2>
                         </div>
@@ -32,7 +32,7 @@
                         </div>
                     </a>
 
-                    <a class="tile tileLinks" id="QA">
+                    <a class="tile tileLinks" id="qa">
                         <div class="maintenanceTileHeaderText">
                             <h2>QA</h2>
                         </div>
@@ -125,9 +125,11 @@
 
     <footer id="footer" class="footer"></footer>
 
-    <script src="config.js"></script>
+    <script src="/config.js"></script>
     <script>
         document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("maint").href = MAINT;
+        document.getElementById("qa").href = QA;
     </script>
 </body>
 
