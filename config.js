@@ -1,5 +1,5 @@
 // Links
-const HOME = "/";
+const HOME = "";
 const LOGIN = "login.html";
 const REGISTER = "register.html";
 const FORGOT_PASSWORD = "forgotPassword.html";
