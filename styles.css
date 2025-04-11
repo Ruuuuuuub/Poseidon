@@ -47,7 +47,7 @@ code {
 .navbar-login-register {
     display: flex;
     position: absolute;
-    right: 15px;
+    right: 0px;
     top: 5px;
     justify-content: space-between;
     gap: 10px;
