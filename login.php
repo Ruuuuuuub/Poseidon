@@ -1,59 +1,67 @@
-<?php
-$servername = "srv1804.hstgr.io";
-$database = "u126520968_poseidon";
-$username = "u126520968_risdahl";
-$password = "ExcoreZzz1";
+<!doctype html>
+<html lang="en">
 
-// Get posted login values
-$login_username = $_POST['login_username'];
-$login_password = $_POST['login_password'];
-
-// Connect to the database
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection Failed: " . $conn->connect_error);
-}
-
-// Prepare and execute query to fetch user info
-$stmt = $conn->prepare("SELECT PASSWORD, ORGANISATION, DEPARTMENT, APPROVED FROM users WHERE USERNAME = ?");
-$stmt->bind_param("s", $login_username);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 1) {
-    $row = $result->fetch_assoc();
-    $hashed_password = $row['PASSWORD'];
-    $organisation = $row['ORGANISATION'];
-    $department = $row['DEPARTMENT'];
-    $approved = $row['APPROVED'];
-
-    if (password_verify($login_password, $hashed_password)) {
-
-        // ✅ Check if account is approved
-        if ($approved == 1) {
-            // ✅ Approved → route based on org/dep
-            if ($organisation == 1 && $department == 1) {
-                header("Location: /133aw/maint_sqd/home.html");
-            } elseif ($organisation == 1 && $department == 2) {
-                header("Location: /133aw/333_sqd/home.html");
-            } else {
-                header("Location: index.html");
-            }
-        } else {
-            header("Location: not-approved.html");
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="Pictures/maintenance_patch.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('Pictures/background.png');
         }
+    </style>
+</head>
 
-        exit();
-    } else {
-        echo "Invalid username or password.";
-    }
-} else {
-    echo "User not found.";
-}
+<body>
+    <div class='container'>
+        <div id="login-form">
+            <form action="login-function.php" method="POST">
+                <h1>Login</h1>
+                <div class="input-box">
 
-// Close
-$stmt->close();
-$conn->close();
-?>
+                    <input type="text" name="login_username" placeholder='Username' required />
+                    <div class="login-icon">
+                        <svg height="35" width="35" xmlns="http://127.0.0.1:5500/login.php/2000/svg">
+                            <image height="35" width="35" href="Pictures/Login/user.svg" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="login_password" placeholder='Password' required />
+                    <div class="login-icon">
+                        <svg height="35" width="35" xmlns="http://127.0.0.1:5500/login.php/2000/svg">
+                            <image height="35" width="35" href="Pictures/Login/lock.svg" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" />Remember username</label>
+                    <a id="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type='submit' name='login' id="login_btn"></button>
+
+                <div class="register-link">
+                    <a id="register">
+                        Don`t have an account?
+                    </a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer id="footer" class="footer"></footer>
+
+    <script src="config.js"></script>
+    <script>
+        document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("login_btn").textContent = LOGIN_BTN;
+        document.getElementById("register").href = REGISTER;
+        document.getElementById("forgot-password").href = FORGOT_PASSWORD;
+    </script>
+</body>
+
+</html>
