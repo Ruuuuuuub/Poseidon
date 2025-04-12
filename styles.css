@@ -82,6 +82,43 @@ code {
     color: #000;
 }
 
+
+/* FRONT PAGE CLOCK */
+.navbarTime {
+    padding: 0px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    width: 200px;
+    font-size: 18px;
+    text-align: center;
+    word-spacing: 25px;
+}
+
+.date {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.time {
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.timeText {
+    font-size: 13px;
+    color: whitesmoke;
+    align-items: center;
+    word-spacing: 55px;
+    font-weight: bold;
+}
+
+/* FRONT PAGE CLOCK */
+
+
 .footer {
     position: absolute;
     left: 5px;
