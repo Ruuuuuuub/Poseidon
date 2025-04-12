@@ -17,7 +17,7 @@ const LEADERSHIP = "../../133aw/maint_sqd/leadership.html";
 const COMPETENCE = "../../133aw/maint_sqd/competence-planner.html";
 
 // Text content
-const FOOTER = "© 2025 Ruben Isdahl"; // Footer on all pages
+const FOOTER = "© 2025"; // Footer on all pages
 const PROGRAM_NAME = "Poseidon Dashboard"; // Front page index.html
 const LOGIN_BTN = "Login"; // Front page + login page button
 const REGISTER_BTN = "Register"; // Front page + register page button

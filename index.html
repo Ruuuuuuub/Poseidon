@@ -15,38 +15,47 @@
 </head>
 
 <body>
-    <nav id="navbar"></nav>
-
-
+    <!-- LOGIN & REGISTER BUTTON & LOGO IF COMMENTED BACK IN  -->
     <div class="navbar">
-        <div>
-            <div class="logo">
+
+        <!-- <div class="logo">
                 <img src="Pictures/Maintenance_Patch.png" alt="maint_patch" class="logo">
-            </div>
-            <div class="navbar-login-register">
-                <a id="login">
-                    <button id="login_btn"></button>
-                </a>
-                <a id="register">
-                    <button id="register_btn"></button>
-                </a>
-            </div>
+            </div> -->
+
+        <!-- CLOCK -->
+        <nav id="navbar"></nav>
+
+        <div class="front-page-name">
+            <!-- PROGRAM NAME BOX -->
+            <H1 id="program_name"></H1>
         </div>
+
+        <div class="navbar-login-register">
+            <a id="login">
+                <button id="login_btn"></button>
+            </a>
+            <a id="register">
+                <button id="register_btn"></button>
+            </a>
+        </div>
+
     </div>
-    <div class='container'>
-        <H1 id="program_name"></H1>
-    </div>
+
+
+
+    <!-- TEST BUTTON TO NAVIGATE -->
 
     <a id="maint_home">
         <button>133aw / Maint</button>
     </a>
 
+    <!-- FOOTER -->
     <footer id="footer" class="footer"></footer>
 
+    <!-- SCRIPTS -->
     <script src="config.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/dateTime.js"></script>
-
     <script>
         document.getElementById("footer").textContent = FOOTER;
         document.getElementById("program_name").textContent = PROGRAM_NAME;
