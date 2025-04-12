@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="Pictures/Maintenance_Patch.png" />
+    <link rel="icon" type="image/svg+xml" href="Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
@@ -17,11 +17,11 @@
 <body>
     <div class='container'>
         <div id="login-form">
-            <form action="">
+            <form action="login.php" method="POST">
                 <h1>Login</h1>
                 <div class="input-box">
 
-                    <input type="text" name="username" placeholder='Username' required />
+                    <input type="text" name="login_username" placeholder='Username' required />
                     <div class="login-icon">
                         <svg height="35" width="35" xmlns="http://127.0.0.1:5500/login.html/2000/svg">
                             <image height="35" width="35" href="Pictures/Login/user.svg" />
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder='Password' required />
+                    <input type="password" name="login_password" placeholder='Password' required />
                     <div class="login-icon">
                         <svg height="35" width="35" xmlns="http://127.0.0.1:5500/login.html/2000/svg">
                             <image height="35" width="35" href="Pictures/Login/lock.svg" />

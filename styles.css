@@ -177,8 +177,6 @@ code {
 
 }
 
-.front-page-name h1 {}
-
 /* FRONT PAGE CLOCK */
 
 .navbarContainer {
@@ -222,7 +220,6 @@ code {
 
 /* FRONT PAGE CLOCK */
 
-
 .footer {
     position: absolute;
     left: 5px;
@@ -236,8 +233,6 @@ code {
     border-radius: 10px;
     padding: 1px 10px;
 }
-
-
 
 .input-box input {
     width: 100%;
