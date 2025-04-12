@@ -22,16 +22,16 @@
             </div>
             <div class="navbar-login-register">
                 <a id="login">
-                    <button>Login</button>
+                    <button id="login_btn"></button>
                 </a>
                 <a id="register">
-                    <button>Register</button>
+                    <button id="register_btn"></button>
                 </a>
             </div>
         </div>
     </div>
     <div class='container'>
-        <H1>Poseidon Dashboard</H1>
+        <H1 id="program_name"></H1>
     </div>
 
     <a id="maint_home">
@@ -43,6 +43,9 @@
     <script src="config.js"></script>
     <script>
         document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("program_name").textContent = PROGRAM_NAME;
+        document.getElementById("login_btn").textContent = LOGIN_BTN;
+        document.getElementById("register_btn").textContent = REGISTER_BTN;
         document.getElementById("login").href = LOGIN;
         document.getElementById("register").href = REGISTER;
         document.getElementById("maint_home").href = MAINTENANCE;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="Pictures/Maintenance_Patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poseidon Dashboard</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -33,7 +33,7 @@
                     <a id="forgot-password">Forgot password?</a>
                 </div>
 
-                <button type='submit' name='login'>Login</button>
+                <button type='submit' name='login' id="login_btn"></button>
 
                 <div class="register-link">
                     <a id="register">
@@ -49,6 +49,7 @@
     <script src="config.js"></script>
     <script>
         document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("login_btn").textContent = LOGIN_BTN;
         document.getElementById("register").href = REGISTER;
         document.getElementById("forgot-password").href = FORGOT_PASSWORD;
     </script>
