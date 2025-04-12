@@ -213,14 +213,6 @@ code {
     text-decoration: underline;
 }
 
-.return {
-    position: absolute;
-    left: 10px;
-    top: 25px;
-    transform: translateY(-50%);
-    font-size: 16px;
-}
-
 .maint-flexbox {
     justify-content: center;
     display: flex;
