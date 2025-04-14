@@ -1,5 +1,5 @@
 <?php
-//
+// Start
 $FRONT_PAGE = "/index.php";
 $LOGIN = "/login-form.php";
 $LOGIN_BTN = "Login";
@@ -7,9 +7,10 @@ $REGISTER = "/register-form.php";
 $REGISTER_BTN = "Register";
 $FOOTER = "© 2025";
 $PROGRAM_NAME = "Poseidon Dashboard";
-
-// 
+$NOT_APPROVED = "not-approved.php";
 $FORGOT_PASSWORD = "forgot-password.php";
+
+//  133AW Links
 $MAINTENANCE = "133aw/maint_sqd/home.php";
 $MAINT = "../../133aw/maint_sqd/maint.php";
 $QA = "../../133aw/maint_sqd/qa.html";
@@ -21,7 +22,7 @@ $LVT = "../../133aw/maint_sqd/lvt.html";
 $LEADERSHIP = "../../133aw/maint_sqd/leadership.html";
 $COMPETENCE = "../../133aw/maint_sqd/competence-planner.html";
 $THREE_SQUADRON = "133aw/333_sqd/home.php";
-$NOT_APPROVED = "not-approved.php";
+
 
 // Page Titles Maintenance
 $MAINT_HOME = "133AW/Maintenance-Squadron/Home";

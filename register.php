@@ -1,10 +1,14 @@
 <?php
-include('config.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 
 $servername = "srv1804.hstgr.io";
 $database = "u126520968_poseidon";
 $username = "u126520968_risdahl";
 $password = "ExcoreZzz1";
+
+include('config/register-config.php');
 
 $login_username = $_POST['login_username'];
 $login_password = $_POST['login_password'];

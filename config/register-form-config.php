@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/javascript");
 
-include '../config/config.php';
+include 'config.php';
 ?>
 const LOGIN = "<?php echo $LOGIN; ?>";
 const REGISTER_BTN = "<?php echo $REGISTER_BTN; ?>";

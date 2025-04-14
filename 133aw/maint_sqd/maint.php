@@ -29,23 +29,12 @@
     </div>
     <div class="mypage-container">
         <div class="mypage-user-info">
-            <table>
-                <thead>
-                    <tr>
-                        USER INFO
-                    </tr>
-                    <tr>
-                        <td>USERNAME</td>
-                        <td>EMPLOYEE_NUMBER</td>
-                        <td>FIRSTNAME</td>
-                        <td>LASTNAME</td>
-                        <td>PHONE</td>
-                        <td>EMAIL</td>
-                        <td>ORGANISATION</td>
-                        <td>DEPARTMENT</td>
-                    </tr>
-                </thead>
-            </table>
+           <?php $users = getUsers() ?>
+           <?php foreach($users as $user){ ?>
+                <a href="users.php"><?php echo ucfirst($user['USERNAME']) ?></a>
+            <?php
+            }
+            ?>
         </div>
     </div>
 

@@ -47,7 +47,7 @@
     <footer id="footer" class="footer"></footer>
 
     <!-- SCRIPTS -->
-    <script src="config.js"></script>
+    <script src="config/index-config.php"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/dateTime.js"></script>
     <script>
