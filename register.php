@@ -1,87 +1,42 @@
-<!doctype html>
-<html lang="en">
+<?php
+include('config.php');
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="Pictures/maintenance_patch.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-image: url('Pictures/background.png');
-        }
-    </style>
-</head>
+$servername = "srv1804.hstgr.io";
+$database = "u126520968_poseidon";
+$username = "u126520968_risdahl";
+$password = "ExcoreZzz1";
 
-<body>
-    <div class='container-register'>
-        <div id="register-form">
-            <form action="register-function.php" method="POST">
-                <h1>Register account</h1>
-                <div class="input-box">
-                    <input type="text" name="login_username" placeholder='Username' required />
-                </div>
+$login_username = $_POST['login_username'];
+$login_password = $_POST['login_password'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$employee_number = $_POST['employee_number'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$organisation = $_POST['organisation'];
+$department = $_POST['department'];
 
-                <div class="input-box">
-                    <input type="password" name="login_password" placeholder='Password' />
-                </div>
+$conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die('Connection Failed: ' . $conn->connect_error);
+}
 
-                <div class="input-box">
-                    <input name="firstName" id="firstName" type="text" autoComplete="given-name" placeholder='Firstname'
-                        required />
-                </div>
+$stmt = $conn->prepare("SELECT * FROM users WHERE USERNAME = ? OR EMPLOYEE_NUMBER = ?");
+$stmt->bind_param("ss", $login_username, $employee_number);
+$stmt->execute();
+$result = $stmt->get_result();
 
-                <div class="input-box">
-                    <input name="lastName" id="lastName" type="text" autoComplete="family-name" placeholder='Lastname'
-                        required />
-                </div>
+if ($result->num_rows > 0) {
+    echo "Username or Email already exists. Please try a different one.";
+} else {
+    $hashed_password = password_hash($login_password, PASSWORD_DEFAULT);
+    $stmt = $conn->prepare("INSERT INTO users (USERNAME, PASSWORD, FIRSTNAME, LASTNAME, EMPLOYEE_NUMBER, EMAIL, PHONE, ORGANISATION, DEPARTMENT) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssss", $login_username, $hashed_password, $firstName, $lastName, $employee_number, $email, $phone, $organisation, $department);
+    $stmt->execute();
 
-                <div class="input-box">
-                    <input type="text" placeholder='Employee number' name="employee_number" required />
-                </div>
-
-                <div class="input-box">
-                    <input type="email" placeholder='Email' name="email" required />
-                </div>
-
-                <div class="input-box">
-                    <input type="tel" placeholder='Phonenumber' name="phone" required />
-                </div>
-
-                <div class="input-box">
-                    <select name='organisation' required>
-                        <option value="">Select organisation</option>
-                        <option value="1">133AW</option>
-                        <option value="2">132AW</option>
-                        <option value="3">131AW</option>
-                    </select>
-                </div>
-
-                <div class="input-box">
-                    <select name='department' required>
-                        <option value="">Select department</option>
-                        <option value="1">Maintenance Squadron</option>
-                        <option value="2">333 Squadron</option>
-                    </select>
-                </div>
-
-                <button type='submit' name='register' id="register_btn"></button>
-
-                <div class="register-link">
-                    <a id="login">Already have an account?</a>
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer id="footer" class="footer"></footer>
-
-    <script src="config.js"></script>
-    <script>
-        document.getElementById("footer").textContent = FOOTER;
-        document.getElementById("register_btn").textContent = REGISTER_BTN;
-        document.getElementById("login").href = LOGIN;
-    </script>
-</body>
-
-</html>
+    header("Location: ".$NOT_APPROVED);
+        exit();
+}
+$stmt->close();
+$conn->close();
+?>

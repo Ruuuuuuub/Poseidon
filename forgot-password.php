@@ -40,15 +40,16 @@
         </div>
 
     </div>
-
+    <div class="not-approved">
+        <h1>Forgot Password</h1>
+    </div>
     <!-- FOOTER -->
     <footer id="footer" class="footer"></footer>
 
     <!-- SCRIPTS -->
-    
+    <script src="config.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/dateTime.js"></script>
-    <script src="config/index-config.php"></script>
     <script>
         document.getElementById("footer").textContent = FOOTER;
         document.getElementById("program_name").textContent = PROGRAM_NAME;

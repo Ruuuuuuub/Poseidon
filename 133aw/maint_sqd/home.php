@@ -1,18 +1,11 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header("Location: /login.php");
-    exit();
-}
-?>
+<?php include 'session-redirect.php'; ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../../Pictures/Maintenance_Patch.png" />
+    <link rel="icon" type="image/svg+xml" href="../../Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="../../styles.css">
@@ -25,9 +18,16 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 <body>
     <div class="maint-home">
-        <div class="maint-navbar">
-
+    <div class="page-navbar">
+        <div>
+            <div class="title">
+                <h1 id="133-maint-home"></h1>
+            </div>
+            <a href="../../logout.php">
+                <button>Logout</button>
+            </a>
         </div>
+    </div>
         <div class="maint-flexbox">
             <div class="maint-cards">
                 <section class="tiles-container">
@@ -114,7 +114,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     </a>
                 </section>
             </div>
-
+ 
             <!-- INFO SCREEN -->
             <div class="maint-info">
                 <div class="maint-info-search">
@@ -134,9 +134,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
     <footer id="footer" class="footer"></footer>
 
-    <script src="../../config.js"></script>
+    <script src="../../config/maint-home-config.php"></script>
     <script>
         document.getElementById("footer").textContent = FOOTER;
+        document.getElementById("133-maint-home").textContent = MAINT_HOME;
         document.getElementById("maint").href = MAINT;
         document.getElementById("qa").href = QA;
         document.getElementById("bu").href = BU;
