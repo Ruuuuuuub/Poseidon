@@ -13,7 +13,7 @@ $FORGOT_PASSWORD = "forgot-password.php";
 //  133AW Links
 $MAINTENANCE = "133aw/maint_sqd/home.php";
 $MAINT = "../../133aw/maint_sqd/maint.php";
-$QA = "../../133aw/maint_sqd/qa.html";
+$QA = "../../133aw/maint_sqd/qa.php";
 $BU = "../../133aw/maint_sqd/bu.html";
 $RU = "../../133aw/maint_sqd/ru.html";
 $MOC = "../../133aw/maint_sqd/moc.html";

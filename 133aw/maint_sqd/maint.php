@@ -1,4 +1,5 @@
 <?php include 'session-redirect.php'; ?>
+<?php require "../../php/function.php"; ?>
 
 <!doctype html>
 <html lang="en">
@@ -10,40 +11,25 @@
     <title>Maintenance</title>
     <link rel="stylesheet" href="../../styles.css">
     <style>
-        body {
-            background-image: url('../../Pictures/background.png');
-        }
+    body {
+        background-image: url('../../Pictures/background.png');
+    }
     </style>
 </head>
 
 <body>
-    <div class="page-navbar">
-        <div>
-            <div class="title">
-                <h1 id="133-maint-maint"></h1>
-            </div>
-            <a href="/logout.php">
-                <button>Logout</button>
-            </a>
-        </div>
-    </div>
-    <div class="mypage-container">
-        <div class="mypage-user-info">
-           <?php $users = getUsers() ?>
-           <?php foreach($users as $user){ ?>
-                <a href="users.php"><?php echo ucfirst($user['USERNAME']) ?></a>
-            <?php
-            }
-            ?>
-        </div>
+    <div>
+        <h1>Maint</h1>
     </div>
 
 
     <footer id="footer" class="footer"></footer>
     <script src="../../config/maint-maint-config.php"></script>
     <script>
-        document.getElementById("footer").textContent = FOOTER;
-        document.getElementById("133-maint-maint").textContent = MAINT_MAINT;
+    document.getElementById("footer").textContent = FOOTER;
+    document.getElementById("133-maint-maint").textContent = MAINT_MAINT;
     </script>
+
+</body>
 
 </html>
