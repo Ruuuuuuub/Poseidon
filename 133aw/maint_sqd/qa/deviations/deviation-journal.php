@@ -1,5 +1,5 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; $deviations = getDeviation();?>
 
 <!doctype html>
 <html lang="en">
@@ -163,12 +163,9 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($deviation['REPORT_NUMBER']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
                             <?php $deviations = getDeviation() ?>
@@ -386,6 +383,8 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_DEVIATION_JOURNAL;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
+
+    <?php closeDb(); ?>
 
 </body>
 

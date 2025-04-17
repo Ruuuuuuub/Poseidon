@@ -1,5 +1,5 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; $authP8 = getAuthP8();?>
 
 <!doctype html>
 <html lang="en">
@@ -139,12 +139,9 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authP8s['USER_ID']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
                             <?php $authP8 = getAuthP8() ?>
@@ -314,6 +311,8 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_AUTH_P8;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
+
+    <?php closeDb(); ?>
 
 </body>
 

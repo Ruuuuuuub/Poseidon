@@ -2,18 +2,22 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
-    require "config.php";
+require "config.php";
 
-    function dbConnect(){
-        global $servername, $username, $password, $database;
+$conn = null;
+
+function dbConnect() {
+    global $servername, $username, $password, $database, $conn;
+
+    if ($conn === null) {
         $conn = new mysqli($servername, $username, $password, $database);
-
-        if ($conn->connect_error != 0) {
-            return FALSE;
-        } else {
-            return $conn;
+        if ($conn->connect_error) {
+            return false;
         }
     }
+
+    return $conn;
+}
 
     function getUsers(){
         $conn = dbConnect();
@@ -94,5 +98,13 @@ session_start();
         }
 
         return $AuthLVT;
+    }
+
+    function closeDb() {
+        global $conn;
+        if ($conn !== null) {
+            $conn->close();
+            $conn = null;
+        }
     }
 ?>

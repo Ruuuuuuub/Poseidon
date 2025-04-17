@@ -1,5 +1,5 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; $authBU = getAuthBU();?>
 
 <!doctype html>
 <html lang="en">
@@ -111,68 +111,44 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['USER_ID']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['FUEL_AIRCRAFT_HELI']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['AIRCRAFT_TOWING']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['LOX']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $authBU = getAuthBU() ?>
-                            <?php foreach($authBU as $authBUs){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($authBUs['RAG']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                     </tr>
                 </tbody>
@@ -230,6 +206,8 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_AUTH_BU;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
+
+    <?php closeDb(); ?>
 
 </body>
 

@@ -1,5 +1,5 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; $users = getUser();?>
 
 <!doctype html>
 <html lang="en">
@@ -115,76 +115,49 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['USER_ID']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['FIRSTNAME']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['LASTNAME']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['PHONE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['EMAIL']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['POSITION']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['ADDRESS']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['CITY']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
+                            <?php foreach($users as $user); ?>
                             <p><?php echo ucfirst($user['ZIP']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                     </tr>
                 </tbody>
@@ -243,6 +216,8 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_USER_LIST;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
+
+    <?php closeDb(); ?>
 
 </body>
 
