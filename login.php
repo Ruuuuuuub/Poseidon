@@ -19,7 +19,7 @@ if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("SELECT PASSWORD, ORGANISATION, DEPARTMENT, APPROVED, ROLE FROM users WHERE USERNAME = ?");
+$stmt = $conn->prepare("SELECT PASSWORD, ORGANISATION, DEPARTMENT, APPROVED, ROLE FROM tbl_users WHERE USERNAME = ?");
 $stmt->bind_param("s", $login_username);
 $stmt->execute();
 $result = $stmt->get_result();

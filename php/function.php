@@ -28,4 +28,71 @@ session_start();
 
         return $users;
     }
+
+    function getDeviation(){
+        $conn = dbConnect();
+        if (!$conn) {
+            return [];
+        }
+
+        $result = $conn->query("SELECT * FROM tbl_deviations");
+        while($row = $result->fetch_assoc()){
+            $deviations[] = $row;
+        }
+
+        return $deviations;
+    }
+
+    function getAuthP8(){
+        $conn = dbConnect();
+        if (!$conn) {
+            return [];
+        }
+
+        $result = $conn->query("SELECT * FROM tbl_user_authorisation_p8a");
+        while($row = $result->fetch_assoc()){
+            $authP8[] = $row;
+        }
+
+        return $authP8;
+    }
+    function getAuthBU(){
+        $conn = dbConnect();
+        if (!$conn) {
+            return [];
+        }
+
+        $result = $conn->query("SELECT * FROM tbl_user_authorisation_bu");
+        while($row = $result->fetch_assoc()){
+            $authBU[] = $row;
+        }
+
+        return $authBU;
+    }
+    function getAuthRU(){
+        $conn = dbConnect();
+        if (!$conn) {
+            return [];
+        }
+
+        $result = $conn->query("SELECT * FROM tbl_user_authorisation_ru");
+        while($row = $result->fetch_assoc()){
+            $authRU[] = $row;
+        }
+
+        return $authRU;
+    }
+    function getAuthLVT(){
+        $conn = dbConnect();
+        if (!$conn) {
+            return [];
+        }
+
+        $result = $conn->query("SELECT * FROM tbl_user_authorisation_lvt");
+        while($row = $result->fetch_assoc()){
+            $AuthLVT[] = $row;
+        }
+
+        return $AuthLVT;
+    }
 ?>

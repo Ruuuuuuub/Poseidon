@@ -1,18 +1,18 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../../../Pictures/maintenance_patch.png" />
+    <link rel="icon" type="image/svg+xml" href="../../../../Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maintenance</title>
-    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles.css">
     <style>
     body {
-        background-image: url('../../../Pictures/background.png');
+        background-image: url('../../../../Pictures/background.png');
     }
     </style>
 </head>
@@ -68,13 +68,121 @@
         </aside>
 
         <section class="table-container">
+            <table class="table-table">
+                <thead class="table-head">
+                    <tr class="table-header">
+                        <th class="">USER_ID</th>
+                        <th class="">AUTHORISATION</th>
+                        <th class="">AUTHORISATION_ORG</th>
+                        <th class="">AUTHORISATION_DUE</th>
+                        <th class="">FUEL_AIRCRAFT_HELI</th>
+                        <th class="">AIRCRAFT_TOWING</th>
+                        <th class="">LOX</th>
+                        <th class="">RAG</th>
+                    </tr>
+                    <tr class="table-search-container">
+                        <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
+                                data-column="1">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="firstname" class="table-search-input"
+                                data-column="2">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="lastname" class="table-search-input"
+                                data-column="3">
+                        </th>
+                        <th> <input type="text" placeholder="Search" name="phone" class="table-search-input"
+                                data-column="4">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="email" class="table-search-input"
+                                data-column="5">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="position" class="table-search-input"
+                                data-column="6">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="adress" class="table-search-input"
+                                data-column="7">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="city" class="table-search-input"
+                                data-column="8">
+                        </th>
+                    </tr>
+                </thead>
 
+                <tbody class="table-body">
+                    <tr>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['USER_ID']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['AUTHORISATION']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['AUTHORISATION_ORG']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['AUTHORISATION_DUE']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['FUEL_AIRCRAFT_HELI']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['AIRCRAFT_TOWING']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['LOX']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authBU = getAuthBU() ?>
+                            <?php foreach($authBU as $authBUs){ ?>
+                            <p><?php echo ucfirst($authBUs['RAG']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </section>
     </div>
 
     <footer id="footer" class="footer"></footer>
-    <script src="../../../config/maint-qa-config.php"></script>
+    <script src="../../../../config/maint-qa-config.php"></script>
     <script>
     document.getElementById("footer").textContent = FOOTER;
     document.getElementById("133-maint-qa-1").textContent = MAINT_QA_1;
@@ -121,7 +229,7 @@
 
     document.getElementById("133-maint-qa").textContent = MAINT_QA_AUTH_BU;
     </script>
-    <script src="../../../scripts/dateTime.js"></script>
+    <script src="../../../../scripts/dateTime.js"></script>
 
 </body>
 

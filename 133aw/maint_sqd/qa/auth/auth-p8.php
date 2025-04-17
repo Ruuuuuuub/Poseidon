@@ -1,18 +1,18 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../php/function.php"; ?>
+<?php require "../../../../php/function.php"; ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../../../Pictures/maintenance_patch.png" />
+    <link rel="icon" type="image/svg+xml" href="../../../../Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QA</title>
-    <link rel="stylesheet" href="../../../styles.css">
+    <title>Maintenance</title>
+    <link rel="stylesheet" href="../../../../styles.css">
     <style>
     body {
-        background-image: url('../../../Pictures/background.png');
+        background-image: url('../../../../Pictures/background.png');
     }
     </style>
 </head>
@@ -71,15 +71,21 @@
             <table class="table-table">
                 <thead class="table-head">
                     <tr class="table-header">
-                        <th class="">Employee-Number</th>
-                        <th class="">Firstname</th>
-                        <th class="">Lastname</th>
-                        <th class="">Phone</th>
-                        <th class="">Email</th>
-                        <th class="">Position</th>
-                        <th class="">Address</th>
-                        <th class="">City</th>
-                        <th class="">Zip</th>
+                        <th class="">USER_ID</th>
+                        <th class="">CATEGORY</th>
+                        <th class="">CS_MP_TT</th>
+                        <th class="">MP_ORG</th>
+                        <th class="">MP_DUE</th>
+                        <th class="">CS_ORG</th>
+                        <th class="">CS_DUE</th>
+                        <th class="">CS_CAT_C_ORG</th>
+                        <th class="">CS_CAT_C_DUE</th>
+                        <th class="">QI_ORG</th>
+                        <th class="">QI_DUE</th>
+                        <th class="">OJT_SUPERVISOR_ORG</th>
+                        <th class="">OJT_SUPERVISOR_DUE</th>
+                        <th class="">ASSESSOR_ORG</th>
+                        <th class="">ASSESSOR_DUE</th>
                     </tr>
                     <tr class="table-search-container">
                         <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
@@ -109,79 +115,145 @@
                         <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
                                 data-column="9">
                         </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="10">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="11">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="12">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="13">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="14">
+                        </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="15">
+                        </th>
                     </tr>
                 </thead>
 
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['EMPLOYEE_NUMBER']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['USER_ID']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['FIRSTNAME']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CATEGORY']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['LASTNAME']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CS_MP_TT']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['PHONE']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['MP_ORG']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['EMAIL']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['MP_DUE']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['POSITION']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CS_ORG']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['ADDRESS']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CS_DUE']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['CITY']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CS_CAT_C_ORG']) ?></p>
                             <?php
             }
             ?>
                         </td>
                         <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['ZIP']) ?></p>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['CS_CAT_C_DUE']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['QI_ORG']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['QI_DUE']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['OJT_SUPERVISOR_ORG']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['OJT_SUPERVISOR_DUE']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['ASSESSOR_ORG']) ?></p>
+                            <?php
+            }
+            ?>
+                        </td>
+                        <td>
+                            <?php $authP8 = getAuthP8() ?>
+                            <?php foreach($authP8 as $authP8s){ ?>
+                            <p><?php echo ucfirst($authP8s['ASSESSOR_DUE']) ?></p>
                             <?php
             }
             ?>
@@ -194,10 +266,9 @@
     </div>
 
     <footer id="footer" class="footer"></footer>
-    <script src="../../../config/maint-qa-config.php"></script>
+    <script src="../../../../config/maint-qa-config.php"></script>
     <script>
     document.getElementById("footer").textContent = FOOTER;
-
     document.getElementById("133-maint-qa-1").textContent = MAINT_QA_1;
     document.getElementById("133-maint-qa-2").textContent = MAINT_QA_2;
     document.getElementById("133-maint-qa-3").textContent = MAINT_QA_3;
@@ -240,9 +311,9 @@
     document.getElementById("133-maint-qa-19-link").href = MAINT_QA_19_LINK;
     document.getElementById("133-maint-qa-20-link").href = MAINT_QA_20_LINK;
 
-    document.getElementById("133-maint-qa").textContent = MAINT_QA_USER_LIST;
+    document.getElementById("133-maint-qa").textContent = MAINT_QA_AUTH_P8;
     </script>
-    <script src="../../../scripts/dateTime.js"></script>
+    <script src="../../../../scripts/dateTime.js"></script>
 
 </body>
 
