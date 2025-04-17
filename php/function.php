@@ -21,7 +21,7 @@ session_start();
             return [];
         }
 
-        $result = $conn->query("SELECT * FROM users");
+        $result = $conn->query("SELECT * FROM tbl_users");
         while($row = $result->fetch_assoc()){
             $users[] = $row;
         }

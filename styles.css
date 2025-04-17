@@ -482,7 +482,7 @@ code {
 .table-search-input {
     width: 100%;
     padding: 5px;
-    font-size: 0.8vw;
+    /* font-size: 0.8vw; */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -493,10 +493,12 @@ code {
 
 .table-search-container th {
     padding: 5px;
+
 }
 
 .table-search-container {
     justify-content: center;
+    height: 36px;
 }
 
 .table-header {
@@ -515,8 +517,7 @@ code {
 }
 
 .table-container thead tr+tr {
-    top: 30px;
-    /* This pushes the second row below the first */
+    top: 25px;
     z-index: 1;
 }
 

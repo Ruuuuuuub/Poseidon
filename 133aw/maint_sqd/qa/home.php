@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="../../../Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QA</title>
+    <title>Maintenance</title>
     <link rel="stylesheet" href="../../../styles.css">
     <style>
     body {
@@ -68,127 +68,7 @@
         </aside>
 
         <section class="table-container">
-            <table class="table-table">
-                <thead class="table-head">
-                    <tr class="table-header">
-                        <th class="">Employee-Number</th>
-                        <th class="">Firstname</th>
-                        <th class="">Lastname</th>
-                        <th class="">Phone</th>
-                        <th class="">Email</th>
-                        <th class="">Position</th>
-                        <th class="">Address</th>
-                        <th class="">City</th>
-                        <th class="">Zip</th>
-                    </tr>
-                    <tr class="table-search-container">
-                        <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
-                                data-column="1">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="firstname" class="table-search-input"
-                                data-column="2">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="lastname" class="table-search-input"
-                                data-column="3">
-                        </th>
-                        <th> <input type="text" placeholder="Search" name="phone" class="table-search-input"
-                                data-column="4">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="email" class="table-search-input"
-                                data-column="5">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="position" class="table-search-input"
-                                data-column="6">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="adress" class="table-search-input"
-                                data-column="7">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="city" class="table-search-input"
-                                data-column="8">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
-                                data-column="9">
-                        </th>
-                    </tr>
-                </thead>
-
-                <tbody class="table-body">
-                    <tr>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['EMPLOYEE_NUMBER']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['FIRSTNAME']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['LASTNAME']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['PHONE']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['EMAIL']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['POSITION']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['ADDRESS']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['CITY']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $users = getUsers() ?>
-                            <?php foreach($users as $user){ ?>
-                            <p><?php echo ucfirst($user['ZIP']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            
 
         </section>
     </div>
@@ -197,7 +77,6 @@
     <script src="../../../config/maint-qa-config.php"></script>
     <script>
     document.getElementById("footer").textContent = FOOTER;
-
     document.getElementById("133-maint-qa-1").textContent = MAINT_QA_1;
     document.getElementById("133-maint-qa-2").textContent = MAINT_QA_2;
     document.getElementById("133-maint-qa-3").textContent = MAINT_QA_3;
@@ -240,7 +119,7 @@
     document.getElementById("133-maint-qa-19-link").href = MAINT_QA_19_LINK;
     document.getElementById("133-maint-qa-20-link").href = MAINT_QA_20_LINK;
 
-    document.getElementById("133-maint-qa").textContent = MAINT_QA_USER_LIST;
+    document.getElementById("133-maint-qa").textContent = MAINT_QA;
     </script>
     <script src="../../../scripts/dateTime.js"></script>
 
