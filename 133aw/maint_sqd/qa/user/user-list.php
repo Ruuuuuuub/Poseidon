@@ -95,22 +95,22 @@
                                 </svg>
                             </a>
                         </th>
-                        <th><input type="text" placeholder="Search" name="name" class="table-search-input"
+                        <th><input type="search" placeholder="Search" name="name" class="table-search-input"
                                 data-column="1">
                         </th>
-                        <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
+                        <th><input type="search" placeholder="Search" name="employee-number" class="table-search-input"
                                 data-column="2">
                         </th>
-                        <th><input type="text" placeholder="Search" name="phone" class="table-search-input"
+                        <th><input type="search" placeholder="Search" name="phone" class="table-search-input"
                                 data-column="3">
                         </th>
-                        <th> <input type="text" placeholder="Search" name="email" class="table-search-input"
+                        <th> <input type="search" placeholder="Search" name="email" class="table-search-input"
                                 data-column="4">
                         </th>
-                        <th><input type="text" placeholder="Search" name="position" class="table-search-input"
+                        <th><input type="search" placeholder="Search" name="position" class="table-search-input"
                                 data-column="5">
                         </th>
-                        <th><input type="text" placeholder="Search" name="address" class="table-search-input"
+                        <th><input type="search" placeholder="Search" name="address" class="table-search-input"
                                 data-column="6">
                         </th>
                     </tr>
@@ -129,7 +129,9 @@
                         </td>
                         <td><?= ucfirst($user['NAME'] ?? 'N/A') ?></td>
                         <td><?= ucfirst($user['EMPLOYEE_NUMBER'] ?? 'N/A') ?></td>
-                        <td><?= ucfirst($user['PHONE'] ?? 'N/A') ?></td>
+                        <td>
+                            <?= substr($user['PHONE'], 0, 3) . ' ' . substr($user['PHONE'], 3, 2) . ' ' . substr($user['PHONE'], 5) ?>
+                        </td>
                         <td><?= ucfirst($user['EMAIL'] ?? 'N/A') ?></td>
                         <td><?= ucfirst($user['POS'] ?? 'N/A') ?></td>
                         <td><?= ucfirst($user['FULL_ADDRESS'] ?? 'N/A') ?></td>
@@ -191,6 +193,7 @@
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
     <script src="../../../../scripts/table-sort.js"></script>
+    <script src="../../../../scripts/table-search.js"></script>
     <?php closeDb(); ?>
 
 

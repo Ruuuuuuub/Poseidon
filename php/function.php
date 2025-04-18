@@ -37,7 +37,8 @@ function getUsers() {
 ) as FULL_ADDRESS
 
     FROM tbl_users u
-    LEFT JOIN tbl_position p ON p.ID = u.POSITION");
+    LEFT JOIN tbl_position p ON p.ID = u.POSITION
+    WHERE u.ORGANISATION = 1 AND u.DEPARTMENT = 1");
 
     while ($row = $result->fetch_assoc()) {
         $users[] = $row;
