@@ -1,5 +1,5 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "../../../../php/function.php"; $users = getUser();?>
+<?php require "../../../../php/function.php"; $users = getUsers();?>
 
 <!doctype html>
 <html lang="en">
@@ -8,8 +8,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="../../../../Pictures/maintenance_patch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QA</title>
+    <title>User List</title>
     <link rel="stylesheet" href="../../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles/table.css">
     <style>
     body {
         background-image: url('../../../../Pictures/background.png');
@@ -18,7 +19,6 @@
 </head>
 
 <body>
-
     <nav class="page-navbar">
         <div class="title">
             <h1 id="133-maint-qa"></h1>
@@ -68,104 +68,78 @@
         </aside>
 
         <section class="table-container">
-            <table class="table-table">
-                <thead class="table-head">
-                    <tr class="table-header">
-                        <th class="">Employee-Number</th>
-                        <th class="">Firstname</th>
-                        <th class="">Lastname</th>
-                        <th class="">Phone</th>
-                        <th class="">Email</th>
-                        <th class="">Position</th>
-                        <th class="">Address</th>
-                        <th class="">City</th>
-                        <th class="">Zip</th>
+            <table class="table-table table-sortable">
+                <thead>
+                    <tr>
+                        <th class="table-user-icon">
+                            <a href="" title="Create User">
+                                <svg height="20" width="20" xmlns="http://127.0.0.1:5500/login.php/2000/svg">
+                                    <image height="20" width="20" href="../../../../Pictures/add-document.svg" />
+
+                                </svg>
+                            </a>
+                        </th>
+                        <th>Name</th>
+                        <th>Employee Number</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Position</th>
+                        <th>Address</th>
                     </tr>
-                    <tr class="table-search-container">
-                        <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
+                    <tr>
+                        <th class="table-user-icon">
+                            <a href="" title="Reset Filter">
+                                <svg height="20" width="20" xmlns="http://127.0.0.1:5500/login.php/2000/svg">
+                                    <image height="20" width="20" href="../../../../Pictures/refresh.svg" />
+
+                                </svg>
+                            </a>
+                        </th>
+                        <th><input type="text" placeholder="Search" name="name" class="table-search-input"
                                 data-column="1">
                         </th>
-                        <th><input type="text" placeholder="Search" name="firstname" class="table-search-input"
+                        <th><input type="text" placeholder="Search" name="employee-number" class="table-search-input"
                                 data-column="2">
                         </th>
-                        <th><input type="text" placeholder="Search" name="lastname" class="table-search-input"
+                        <th><input type="text" placeholder="Search" name="phone" class="table-search-input"
                                 data-column="3">
                         </th>
-                        <th> <input type="text" placeholder="Search" name="phone" class="table-search-input"
+                        <th> <input type="text" placeholder="Search" name="email" class="table-search-input"
                                 data-column="4">
                         </th>
-                        <th><input type="text" placeholder="Search" name="email" class="table-search-input"
+                        <th><input type="text" placeholder="Search" name="position" class="table-search-input"
                                 data-column="5">
                         </th>
-                        <th><input type="text" placeholder="Search" name="position" class="table-search-input"
+                        <th><input type="text" placeholder="Search" name="address" class="table-search-input"
                                 data-column="6">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="adress" class="table-search-input"
-                                data-column="7">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="city" class="table-search-input"
-                                data-column="8">
-                        </th>
-                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
-                                data-column="9">
                         </th>
                     </tr>
                 </thead>
 
-                <tbody class="table-body">
+                <tbody>
+                    <?php foreach($users as $user): ?>
                     <tr>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['USER_ID']) ?></p>
-                            <?php endforeach; ?>
+                        <td class="table-user-icon">
+                            <a href="user.php?id=<?= $user['EMPLOYEE_NUMBER'] ?>" title="View User">
+                                <svg height="20" width="20" xmlns="http://127.0.0.1:5500/login.php/2000/svg">
+                                    <image height="20" width="20" href="../../../../Pictures/search.svg" />
+
+                                </svg>
+                            </a>
                         </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['FIRSTNAME']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['LASTNAME']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['PHONE']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['EMAIL']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['POSITION']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['ADDRESS']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['CITY']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($user['ZIP']) ?></p>
-                            <?php endforeach; ?>
-                        </td>
+                        <td><?= ucfirst($user['NAME'] ?? 'N/A') ?></td>
+                        <td><?= ucfirst($user['EMPLOYEE_NUMBER'] ?? 'N/A') ?></td>
+                        <td><?= ucfirst($user['PHONE'] ?? 'N/A') ?></td>
+                        <td><?= ucfirst($user['EMAIL'] ?? 'N/A') ?></td>
+                        <td><?= ucfirst($user['POS'] ?? 'N/A') ?></td>
+                        <td><?= ucfirst($user['FULL_ADDRESS'] ?? 'N/A') ?></td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
 
         </section>
     </div>
-
     <footer id="footer" class="footer"></footer>
     <script src="../../../../config/maint-qa-config.php"></script>
     <script>
@@ -216,8 +190,9 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_USER_LIST;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
-
+    <script src="../../../../scripts/table-sort.js"></script>
     <?php closeDb(); ?>
+
 
 </body>
 

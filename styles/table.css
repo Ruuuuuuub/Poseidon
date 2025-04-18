@@ -1,0 +1,82 @@
+.table-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 210px;
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: #333;
+}
+
+.table-table {
+    border-collapse: collapse;
+    font-size: 0.7em;
+}
+
+.table-table thead tr {
+    background-color: rgb(0, 102, 109);
+    text-align: left;
+    color: #fff;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.table-table thead tr+tr {
+    z-index: 1;
+    top: 33px;
+}
+
+.table-table th,
+.table-table td {
+    padding: 8px 8px;
+}
+
+.table-table tbody tr {
+    background-color: #333;
+    border-bottom: 1px solid #979797;
+    color: #fff;
+}
+
+.table-table tbody tr:nth-of-type(even) {
+    background-color: #5c5a5a;
+}
+
+.table-search-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    text-align: left;
+    width: 100%;
+}
+
+.table-user-icon {
+    filter: brightness(0) invert(1);
+}
+
+.table-sortable th {
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+    background-color: rgba(0, 0, 0, 0.1);
+}

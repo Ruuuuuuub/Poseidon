@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maintenance</title>
     <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles/table.css">
     <style>
     body {
         background-image: url('../../../Pictures/background.png');

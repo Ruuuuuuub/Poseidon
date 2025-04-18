@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maintenance</title>
     <link rel="stylesheet" href="../../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles/table.css">
     <style>
     body {
         background-image: url('../../../../Pictures/background.png');
@@ -71,6 +72,7 @@
             <table class="table-table">
                 <thead class="table-head">
                     <tr class="table-header">
+                        <th class="">NAME</th>
                         <th class="">USER_ID</th>
                         <th class="">CATEGORY</th>
                         <th class="">CS_MP_TT</th>
@@ -133,132 +135,49 @@
                         <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
                                 data-column="15">
                         </th>
+                        <th><input type="text" placeholder="Search" name="zip" class="table-search-input"
+                                data-column="15">
+                        </th>
                     </tr>
                 </thead>
 
                 <tbody class="table-body">
+                    <?php foreach($authP8 as $authP8Row): ?>
                     <tr>
-                        <td>
-                            <?php foreach($users as $user); ?>
-                            <p><?php echo ucfirst($authP8s['USER_ID']) ?></p>
-                            <?php endforeach; ?>
+                        <td><?= isset($authP8Row['NAME']) ? ucfirst($authP8Row['NAME']) : 'N/A' ?></td>
+                        <td><?= isset($authP8Row['USER_ID']) ? ucfirst($authP8Row['USER_ID']) : 'N/A' ?></td>
+                        <td><?= isset($authP8Row['CAT']) ? ucfirst($authP8Row['CAT']) : 'N/A' ?></td>
+                        <td><?= isset($authP8Row['AUTH']) ? ucfirst($authP8Row['AUTH']) : 'N/A' ?></td>
+                        <td><?= (!empty($authP8Row['MP_ORG']) && $authP8Row['MP_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['MP_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CATEGORY']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['MP_DUE']) && $authP8Row['MP_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['MP_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CS_MP_TT']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['CS_ORG']) && $authP8Row['CS_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['CS_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['MP_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['CS_DUE']) && $authP8Row['CS_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['CS_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['MP_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['CS_CAT_C_ORG']) && $authP8Row['CS_CAT_C_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['CS_CAT_C_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CS_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['CS_CAT_C_DUE']) && $authP8Row['CS_CAT_C_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['CS_CAT_C_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CS_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['QI_ORG']) && $authP8Row['QI_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['QI_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CS_CAT_C_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['QI_DUE']) && $authP8Row['QI_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['QI_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['CS_CAT_C_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['OJT_SUPERVISOR_ORG']) && $authP8Row['OJT_SUPERVISOR_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['OJT_SUPERVISOR_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['QI_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['OJT_SUPERVISOR_DUE']) && $authP8Row['OJT_SUPERVISOR_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['OJT_SUPERVISOR_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['QI_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['ASSESSOR_ORG']) && $authP8Row['ASSESSOR_ORG'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['ASSESSOR_ORG'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['OJT_SUPERVISOR_ORG']) ?></p>
-                            <?php
-            }
-            ?>
+                        <td><?= (!empty($authP8Row['ASSESSOR_DUE']) && $authP8Row['ASSESSOR_DUE'] !== '0000-00-00') ? date("d.m.Y", strtotime($authP8Row['ASSESSOR_DUE'])) : '' ?>
                         </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['OJT_SUPERVISOR_DUE']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['ASSESSOR_ORG']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
-                        <td>
-                            <?php $authP8 = getAuthP8() ?>
-                            <?php foreach($authP8 as $authP8s){ ?>
-                            <p><?php echo ucfirst($authP8s['ASSESSOR_DUE']) ?></p>
-                            <?php
-            }
-            ?>
-                        </td>
+
                     </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
-
         </section>
     </div>
 

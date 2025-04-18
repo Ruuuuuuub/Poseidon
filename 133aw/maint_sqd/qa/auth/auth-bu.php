@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maintenance</title>
     <link rel="stylesheet" href="../../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles/table.css">
     <style>
     body {
         background-image: url('../../../../Pictures/background.png');
@@ -71,7 +72,7 @@
             <table class="table-table">
                 <thead class="table-head">
                     <tr class="table-header">
-                        <th class="">USER_ID</th>
+                        <th class="">authBUs_ID</th>
                         <th class="">AUTHORISATION</th>
                         <th class="">AUTHORISATION_ORG</th>
                         <th class="">AUTHORISATION_DUE</th>
@@ -111,42 +112,42 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['USER_ID']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION_ORG']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['AUTHORISATION_DUE']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['FUEL_AIRCRAFT_HELI']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['AIRCRAFT_TOWING']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['LOX']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($authBU as $authBUs): ?>
                             <p><?php echo ucfirst($authBUs['RAG']) ?></p>
                             <?php endforeach; ?>
                         </td>

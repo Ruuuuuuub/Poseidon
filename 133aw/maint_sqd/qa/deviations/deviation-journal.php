@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maintenance</title>
     <link rel="stylesheet" href="../../../../styles.css">
+    <link rel="stylesheet" href="../../../../styles/table.css">
     <style>
     body {
         background-image: url('../../../../Pictures/background.png');
@@ -163,169 +164,109 @@
                 <tbody class="table-body">
                     <tr>
                         <td>
-                            <?php foreach($users as $user); ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['REPORT_NUMBER']) ?></p>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['MAIN_CATEGORY']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['SUB_CATEGORY']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['ADDED_DATE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['FROM_NAME']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['FROM_USER_ID']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['FROM_DEPARTMENT ']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['SHORT_DESCRIPTION']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['CLOSING']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['CLOSING_USER_ID']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['REMEDY']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['REMEDY_NUMBER']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['REMEDY_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['OCCURRENCE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['OCCURRENCE_RAPORT_NUMBER']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['FOD']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['HMS_BASEN']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['CLOSING_DUE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['CLOSED_DATE']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['FEEDBACK_SENDER']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                         <td>
-                            <?php $deviations = getDeviation() ?>
-                            <?php foreach($deviations as $deviation){ ?>
+                            <?php foreach($deviations as $deviation): ?>
                             <p><?php echo ucfirst($deviation['COMMENT']) ?></p>
-                            <?php
-            }
-            ?>
+                            <?php endforeach; ?>
                         </td>
                     </tr>
                 </tbody>
