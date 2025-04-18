@@ -45,6 +45,7 @@ $MAINT_QA_AUTH_BU = "133AW/Maintenance Squadron/QA/Authorisations BU";
 $MAINT_QA_AUTH_RU = "133AW/Maintenance Squadron/QA/Authorisations RU";
 $MAINT_QA_AUTH_LVT = "133AW/Maintenance Squadron/QA/Authorisations LVT";
 $MAINT_QA_DEVIATION_JOURNAL = "133AW/Maintenance Squadron/QA/Deviation Journal";
+$MAINT_QA_USER = "133AW/Maintenance Squadron/QA/User/"; // IS HARDCODE IN user.php
 
 $MAINT_QA_1 = "Home";
 $MAINT_QA_2 = "My Page";

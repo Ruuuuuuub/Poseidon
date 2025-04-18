@@ -230,6 +230,8 @@
     document.getElementById("133-maint-qa").textContent = MAINT_QA_AUTH_P8;
     </script>
     <script src="../../../../scripts/dateTime.js"></script>
+    <script src="../../../../scripts/table-sort.js"></script>
+    <script src="../../../../scripts/table-search.js"></script>
 
     <?php closeDb(); ?>
 

@@ -13,6 +13,7 @@ const MAINT_QA_AUTH_BU = "<?php echo $MAINT_QA_AUTH_BU; ?>";
 const MAINT_QA_AUTH_RU = "<?php echo $MAINT_QA_AUTH_RU; ?>";
 const MAINT_QA_AUTH_LVT = "<?php echo $MAINT_QA_AUTH_LVT; ?>";
 const MAINT_QA_DEVIATION_JOURNAL = "<?php echo $MAINT_QA_DEVIATION_JOURNAL; ?>";
+const MAINT_QA_USER = "<?php echo $MAINT_QA_USER; ?>";
 
 const MAINT_QA_1 = "<?php echo $MAINT_QA_1; ?>";
 const MAINT_QA_2 = "<?php echo $MAINT_QA_2; ?>";
