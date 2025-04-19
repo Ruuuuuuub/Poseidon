@@ -46,6 +46,11 @@
     background-color: #5c5a5a;
 }
 
+/* .table-table tbody tr:hover {
+    background-color: coral;
+} */
+
+
 .table-search-input {
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -58,6 +63,7 @@
 .table-user-icon {
     filter: brightness(0) invert(1);
 }
+
 
 .table-sortable th {
     cursor: pointer;

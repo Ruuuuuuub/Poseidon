@@ -1,5 +1,9 @@
 <?php include 'session-redirect.php'; ?>
-<?php require "get-user.php";?>
+<?php require "get-user.php";
+$positions = $conn->query("SELECT ID, POSITION FROM tbl_position");
+$organisations = $conn->query("SELECT ID, ORGANISATION FROM organisation");
+$departments = $conn->query("SELECT ID, DEPARTMENT FROM department");
+?>
 
 <!DOCTYPE html>
 <html>
@@ -68,35 +72,221 @@
 
         </aside>
         <Section class="user-container">
-            <div class="user-card user-card-item-1">
-                <h2><strong><?= htmlspecialchars($user['NAME']) ?></strong></h2>
-                <p><strong>Employee Number:</strong> <?= htmlspecialchars($user['EMPLOYEE_NUMBER']) ?></p>
-                <p><strong>Phone:</strong> <?= htmlspecialchars($user['PHONE'] ?? 'N/A') ?></p>
-                <p><strong>Email:</strong> <?= htmlspecialchars($user['EMAIL'] ?? 'N/A') ?></p>
-                <p><strong>Address:</strong> <?= htmlspecialchars($user['FULL_ADDRESS'] ?? 'N/A') ?>
-                <p><strong>Position ID:</strong> <?= htmlspecialchars($user['POS'] ?? 'N/A') ?></p>
-                <p><strong>Organisation:</strong> <?= htmlspecialchars($user['ORG'] ?? 'N/A') ?></p>
-                <p><strong>Department:</strong> <?= htmlspecialchars($user['DEP'] ?? 'N/A') ?></p>
-                <p><strong>Approved:</strong> <?= htmlspecialchars($user['APPROVED'] ?? 'N/A') ?></p>
-                <p><strong>User Created:</strong> <?= htmlspecialchars($user['USER_CREATED'] ?? 'N/A') ?></p>
-                <p><strong>Last Login:</strong> <?= htmlspecialchars($user['LAST_LOGIN'] ?? 'N/A') ?></p>
-            </div>
-            <!--  BU AUTH???  -->
-            <div class="user-card user-card-item-2">
-                BU AUTH
-            </div>
+            <form method="POST" action="update-user.php" class="user-card user-card-item-1">
+                <table class="table-qa-user-view">
+                    <tr>
+                        <th colspan=2>
+                            <h2><strong><?= htmlspecialchars($user['NAME']) ?></strong></h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Employee Number:</strong></p>
+                        </td>
+                        <td>
+                            <p style="text-align: center"><?= htmlspecialchars($user['EMPLOYEE_NUMBER']) ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Phone:</strong></p>
+                        </td>
+                        <td>
+                            <input type="text" name="PHONE" value="<?= htmlspecialchars($user['PHONE']) ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Email:</strong></p>
+                        </td>
+                        <td>
+                            <input type="email" name="EMAIL" value="<?= htmlspecialchars($user['EMAIL']) ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Address:</strong></p>
+                        </td>
+                        <td>
+                            <input type="text" name="ADDRESS" value="<?= htmlspecialchars($user['ADDRESS'] ?? '') ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>City:</strong></p>
+                        </td>
+                        <td>
+                            <input type="text" name="CITY" value="<?= htmlspecialchars($user['CITY'] ?? '') ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>ZIP:</strong></p>
+                        </td>
+                        <td>
+                            <input type="text" name="ZIP" value="<?= htmlspecialchars($user['ZIP'] ?? '') ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Position:</strong></p>
+                        </td>
+                        <td>
+                            <select name="POS">
+                                <?php while ($posOption = $positions->fetch_assoc()): ?>
+                                <option value="<?= $posOption['ID'] ?>"
+                                    <?php if ((string)$user['POSITION'] === (string)$posOption['ID']) echo 'selected'; ?>>
+                                    <?= htmlspecialchars($posOption['POSITION']) ?>
+                                </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Organisation:</strong></p>
+                        </td>
+                        <td>
+                            <select name="ORG">
+                                <?php while ($orgOption = $organisations->fetch_assoc()): ?>
+                                <option value="<?= $orgOption['ID'] ?>"
+                                    <?= $user['ORGANISATION'] == $orgOption['ID'] ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($orgOption['ORGANISATION']) ?>
+                                </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="160px">
+                            <p><strong>Department:</strong></p>
+                        </td>
+                        <td>
+                            <select name="DEP">
+                                <?php while ($depOption = $departments->fetch_assoc()): ?>
+                                <option value="<?= $depOption['ID'] ?>"
+                                    <?= $user['DEPARTMENT'] == $depOption['ID'] ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($depOption['DEPARTMENT']) ?>
+                                </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Her trengst det en tittle for hover og kanskje et ? for å si hva dette betyr -->
+                        <!-- FIKSE TITLE -->
+                        <td>
+                            <p title="Test"><strong>Approved:</strong></p>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="APPROVED" value="1"
+                                    <?= !empty($user['APPROVED']) ? 'checked' : '' ?>>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>User Created:</strong></p>
+                        </td>
+                        <td>
+                            <p style="text-align: center"><?= htmlspecialchars($user['USER_CREATED']) ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2><button type="submit">Save Changes</button></td>
+                    </tr>
+                </table>
+                <input type="hidden" name="EMPLOYEE_NUMBER" value="<?= htmlspecialchars($user['EMPLOYEE_NUMBER']) ?>">
+            </form>
+
             <!--  AUTH  -->
-            <div class="user-card user-card-item-3">
-                AUTH
-            </div>
-            <!--  READ AND SIGN  -->
-            <div class="user-card user-card-item-4">
+            <div class="user-card user-card-item-2">
                 READ AND SIGN
             </div>
             <!--  AUTH  -->
-            <div class="user-card user-card-item-5">
-                AUTH
+            <div class="user-card user-card-item-3">
+                <div class="qa-user-view-tabs">
+                    <input type="radio" class="qa-user-view-radio" name="qa-user-view" id="qa-user-view-tab-1" checked>
+                    <label for="qa-user-view-tab-1" class="qa-user-view-label">P-8A</label>
+                    <div class="qa-user-view-content">
+                        <?php if (!empty($authorisations)): ?>
+                        <?php foreach ($authorisations as $auth): ?>
+                        <table class="auth-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="3"><?= htmlspecialchars($auth['CAT']) ?></th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>ORG</th>
+                                    <th>DUE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MP</td>
+                                    <td><?= htmlspecialchars($auth['MP_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['MP_DUE'] ?? '-') ?></td>
+                                </tr>
+                                <tr>
+                                    <td>CS</td>
+                                    <td><?= htmlspecialchars($auth['CS_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['CS_DUE'] ?? '-') ?></td>
+                                </tr>
+                                <tr>
+                                    <td>CS Cat C</td>
+                                    <td><?= htmlspecialchars($auth['CS_CAT_C_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['CS_CAT_C_DUE'] ?? '-') ?></td>
+                                </tr>
+                                <tr>
+                                    <td>QI</td>
+                                    <td><?= htmlspecialchars($auth['QI_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['QI_DUE'] ?? '-') ?></td>
+                                </tr>
+                                <tr>
+                                    <td>OJT Supervisor</td>
+                                    <td><?= htmlspecialchars($auth['OJT_SUPERVISOR_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['OJT_SUPERVISOR_DUE'] ?? '-') ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Assessor</td>
+                                    <td><?= htmlspecialchars($auth['ASSESSOR_ORG'] ?? '-') ?></td>
+                                    <td><?= htmlspecialchars($auth['ASSESSOR_DUE'] ?? '-') ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <p>No authorisation records found.</p>
+                        <?php endif; ?>
+
+
+                    </div>
+                    <input type="radio" class="qa-user-view-radio" name="qa-user-view" id="qa-user-view-tab-2">
+                    <label for="qa-user-view-tab-2" class="qa-user-view-label">BU</label>
+                    <div class="qa-user-view-content">
+                        Content for tab 2
+                    </div>
+                    <input type="radio" class="qa-user-view-radio" name="qa-user-view" id="qa-user-view-tab-3">
+                    <label for="qa-user-view-tab-3" class="qa-user-view-label">RU</label>
+                    <div class="qa-user-view-content">
+                        Content for tab 3
+                    </div>
+                    <input type="radio" class="qa-user-view-radio" name="qa-user-view" id="qa-user-view-tab-4">
+                    <label for="qa-user-view-tab-4" class="qa-user-view-label">LVT</label>
+                    <div class="qa-user-view-content">
+                        Content for tab 4
+                    </div>
+                    <input type="radio" class="qa-user-view-radio" name="qa-user-view" id="qa-user-view-tab-5">
+                    <label for="qa-user-view-tab-5" class="qa-user-view-label">BU Equipment</label>
+                    <div class="qa-user-view-content">
+                        Content for tab 5
+                    </div>
+                </div>
             </div>
+
         </Section>
     </div>
     <footer id="footer" class="footer"></footer>
@@ -150,8 +340,6 @@
     <script src="../../../../scripts/table-sort.js"></script>
     <script src="../../../../scripts/table-search.js"></script>
     <?php closeDb(); ?>
-
-
 </body>
 
 </html>
